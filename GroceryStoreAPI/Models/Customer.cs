@@ -9,7 +9,7 @@ namespace GroceryStoreAPI.Models
         public int CustomerId { get; set; }
 
         [Required]
-        [Column(TypeName ="nvarchar(255)")]
+        [Column(TypeName = "nvarchar(255)")]
         public string FirstName { get; set; }
 
         [Required]
@@ -27,6 +27,5 @@ namespace GroceryStoreAPI.Models
         [Required]
         [Column(TypeName = "nvarchar(500)")]
         public string Address { get; set; }
-
     }
 }
