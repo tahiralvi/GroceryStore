@@ -1,0 +1,144 @@
+{
+  "scannerProperties": [
+    {
+      "key": "sonar.scanner.app",
+      "value": "ScannerMSBuild"
+    },
+    {
+      "key": "sonar.scanner.appVersion",
+      "value": "11.1"
+    },
+    {
+      "key": "sonar.scanner.bootstrapStartTime",
+      "value": "1771927912000"
+    },
+    {
+      "key": "sonar.projectKey",
+      "value": "GroceryStore"
+    },
+    {
+      "key": "sonar.working.directory",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\.sonar"
+    },
+    {
+      "key": "sonar.projectBaseDir",
+      "value": "D:\\Coding\\GroceryStore"
+    },
+    {
+      "key": "sonar.pullrequest.cache.basepath",
+      "value": "D:\\Coding\\GroceryStore"
+    },
+    {
+      "key": "sonar.sources",
+      "value": "D:\\Coding\\GroceryStore\\.github\\workflows\\build.yml,D:\\Coding\\GroceryStore\\.vs\\GroceryStoreAPI\\config\\applicationhost.config,D:\\Coding\\GroceryStore\\.vs\\GroceryStoreAPI\\v17\\DocumentLayout.backup.json,D:\\Coding\\GroceryStore\\.vs\\GroceryStoreAPI\\v17\\DocumentLayout.json"
+    },
+    {
+      "key": "sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "sonar.modules",
+      "value": "471ACB33-0A48-406A-8735-F9E2ECBA8817,161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.projectKey",
+      "value": "GroceryStore:471ACB33-0A48-406A-8735-F9E2ECBA8817"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.projectName",
+      "value": "GroceryStoreAPI"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.projectBaseDir",
+      "value": "D:\\Coding\\GroceryStore\\GroceryStoreAPI"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.working.directory",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\.sonar\\mod0"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.tests",
+      "value": ""
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.sources",
+      "value": "D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Controllers\\CustomersController.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Migrations\\20210829102117_initial-create.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Migrations\\20210829102117_initial-create.Designer.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Migrations\\CustomerContextModelSnapshot.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Models\\Customer.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Models\\CustomerContext.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Program.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Startup.cs,\"D:\\Coding\\GroceryStore\\GroceryStoreAPI\\obj\\Debug\\netcoreapp3.1\\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs\",D:\\Coding\\GroceryStore\\GroceryStoreAPI\\obj\\Debug\\netcoreapp3.1\\GroceryStoreAPI.AssemblyInfo.cs,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\appsettings.Development.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\appsettings.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\database.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\Properties\\launchSettings.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\obj\\GroceryStoreAPI.csproj.nuget.dgspec.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\obj\\project.assets.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\bin\\Debug\\netcoreapp3.1\\appsettings.Development.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\bin\\Debug\\netcoreapp3.1\\appsettings.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\bin\\Debug\\netcoreapp3.1\\database.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\bin\\Debug\\netcoreapp3.1\\GroceryStoreAPI.deps.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\bin\\Debug\\netcoreapp3.1\\GroceryStoreAPI.runtimeconfig.dev.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\bin\\Debug\\netcoreapp3.1\\GroceryStoreAPI.runtimeconfig.json,D:\\Coding\\GroceryStore\\GroceryStoreAPI\\obj\\Debug\\netcoreapp3.1\\GroceryStoreAPI.sourcelink.json"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.cs.analyzer.projectOutPaths",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\0"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.cs.roslyn.reportFilePaths",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\0\\Issues.json"
+    },
+    {
+      "key": "471ACB33-0A48-406A-8735-F9E2ECBA8817.sonar.cs.scanner.telemetry",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\0\\Telemetry.json"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.projectKey",
+      "value": "GroceryStore:161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.projectName",
+      "value": "GTTest"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.projectBaseDir",
+      "value": "D:\\Coding\\GroceryStore\\GTTest"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.working.directory",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\.sonar\\mod1"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.sourceEncoding",
+      "value": "utf-8"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.sources",
+      "value": ""
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.tests",
+      "value": "D:\\Coding\\GroceryStore\\GTTest\\obj\\GTTest.csproj.nuget.dgspec.json,D:\\Coding\\GroceryStore\\GTTest\\obj\\project.assets.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\appsettings.Development.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\appsettings.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\database.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\GroceryStoreAPI.deps.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\GroceryStoreAPI.runtimeconfig.dev.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\GroceryStoreAPI.runtimeconfig.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\GTTest.deps.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\GTTest.runtimeconfig.dev.json,D:\\Coding\\GroceryStore\\GTTest\\bin\\Debug\\netcoreapp3.1\\GTTest.runtimeconfig.json,D:\\Coding\\GroceryStore\\GTTest\\obj\\Debug\\netcoreapp3.1\\GTTest.sourcelink.json,D:\\Coding\\GroceryStore\\GTTest\\CustomersControllerTests.cs"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.cs.analyzer.projectOutPaths",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\1"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.cs.roslyn.reportFilePaths",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\1\\Issues.json"
+    },
+    {
+      "key": "161BFCB3-66F2-49EE-8D4A-A3D9194A4BB0.sonar.cs.scanner.telemetry",
+      "value": "D:\\Coding\\GroceryStore\\.sonarqube\\out\\1\\Telemetry.json"
+    },
+    {
+      "key": "sonar.token",
+      "value": "***"
+    },
+    {
+      "key": "sonar.host.url",
+      "value": "http://localhost:9000"
+    },
+    {
+      "key": "sonar.cs.opencover.reportsPaths",
+      "value": "coverage.xml"
+    },
+    {
+      "key": "sonar.exclusions",
+      "value": "coverage.xml"
+    },
+    {
+      "key": "sonar.visualstudio.enable",
+      "value": "false"
+    }
+  ]
+}
