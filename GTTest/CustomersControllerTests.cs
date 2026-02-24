@@ -8,6 +8,7 @@ namespace GTTest
     public class CustomersControllerTests
     {
         private readonly CustomerContext _context;
+
         public CustomersControllerTests(CustomerContext context)
         {
             _context = context;
@@ -19,7 +20,7 @@ namespace GTTest
             var customerList = _context.Customer.ToList();
             Console.WriteLine(customerList.Count);
         }
-        
+
         [Fact]
         public void GetCustomerById()
         {
@@ -49,7 +50,7 @@ namespace GTTest
         public void RemoveCustomer()
         {
             int id = 1;
-            var customer = _context.Customer.Find(id);            
+            var customer = _context.Customer.Find(id);
 
             _context.Customer.Remove(customer);
             _context.SaveChanges();
