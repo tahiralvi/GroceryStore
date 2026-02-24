@@ -5,10 +5,10 @@ using Xunit;
 
 namespace GTTest
 {
-    public class UnitTest1
+    public class CustomersControllerTests
     {
         private readonly CustomerContext _context;
-        public UnitTest1(CustomerContext context)
+        public CustomersControllerTests(CustomerContext context)
         {
             _context = context;
         }
