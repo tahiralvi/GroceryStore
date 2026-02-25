@@ -23,15 +23,15 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // GET: api/Customers
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomer()
+        [HttpGet(Name = nameof(GetAllCustomers))]
+        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
         {
             return await _context.Customer.ToListAsync();
         }
 
         // GET: api/Customers/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer(int id)
+        [HttpGet("{id}", Name = nameof(GetSingleCustomer))]
+        public async Task<ActionResult<Customer>> GetSingleCustomer(int id)
         {
             var customer = await _context.Customer.FindAsync(id);
 
@@ -44,8 +44,8 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // PUT: api/Customers/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer(int id, Customer customer)
+        [HttpPut("{id}", Name = nameof(UpdateCustomer))]
+        public async Task<IActionResult> UpdateCustomer(int id, Customer customer)
         {
             if (id != customer.CustomerId)
             {
@@ -74,8 +74,8 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // POST: api/Customers
-        [HttpPost]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
+        [HttpPost(Name = nameof(AddCustomer))]
+        public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
         {
             _context.Customer.Add(customer);
             await _context.SaveChangesAsync();
@@ -84,7 +84,7 @@ namespace GroceryStoreAPI.Controllers
         }
 
         // DELETE: api/Customers/5
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}", Name = nameof(DeleteCustomer))]
         public async Task<ActionResult<Customer>> DeleteCustomer(int id)
         {
             var customer = await _context.Customer.FindAsync(id);

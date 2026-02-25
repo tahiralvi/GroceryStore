@@ -1,12 +1,7 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GroceryStoreAPI.Controllers;
 using GroceryStoreAPI.Models;
-using Xunit;
-using Microsoft.EntityFrameworkCore.InMemory;
 
 
 namespace GroceryStoreAPI.Test
@@ -49,7 +44,7 @@ namespace GroceryStoreAPI.Test
                 context.SaveChanges();
 
                 var controller = new CustomersController(context);
-                var actionResult = await controller.GetCustomer();
+                var actionResult = await controller.GetAllCustomers();
                 var customers = actionResult.Value;
 
                 Assert.NotNull(customers);
@@ -75,7 +70,7 @@ namespace GroceryStoreAPI.Test
                 context.SaveChanges();
 
                 var controller = new CustomersController(context);
-                var actionResult = await controller.GetCustomer(1);
+                var actionResult = await controller.GetSingleCustomer(1);
                 var customer = actionResult.Value;
 
                 Assert.NotNull(customer);
@@ -100,7 +95,7 @@ namespace GroceryStoreAPI.Test
                     ContactNo = "9876543210"
                 };
 
-                var actionResult = await controller.PostCustomer(newCustomer);
+                var actionResult = await controller.AddCustomer(newCustomer);
 
                 // PostCustomer returns ActionResult<Customer> with Result being CreatedAtActionResult
                 Assert.IsType<CreatedAtActionResult>(actionResult.Result);
