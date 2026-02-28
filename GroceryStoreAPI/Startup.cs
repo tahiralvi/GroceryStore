@@ -18,24 +18,34 @@ namespace GroceryStoreAPI
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<GroceryContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
+            // Registration of the new Order Service
+            services.AddScoped<IOrderService, OrderService>();
+
+            services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IItemService, ItemService>();
-            services.AddMvc();
-            services.AddControllers();
+
+            services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Home/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles(); // Required for Bootstrap/CSS in _Layout.cshtml
 
             app.UseRouting();
 
@@ -43,6 +53,12 @@ namespace GroceryStoreAPI
 
             app.UseEndpoints(endpoints =>
             {
+                // Default route for MVC (Home page)
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                // Keep support for existing API attributes
                 endpoints.MapControllers();
             });
         }
