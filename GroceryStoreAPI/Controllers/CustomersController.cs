@@ -11,9 +11,9 @@ namespace GroceryStoreAPI.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly CustomerContext _context;
+        private readonly GroceryContext _context;
 
-        public CustomersController(CustomerContext context)
+        public CustomersController(GroceryContext context)
         {
             _context = context;
         }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GroceryStoreAPI.Migrations
 {
-    [DbContext(typeof(CustomerContext))]
+    [DbContext(typeof(GroceryContext))]
     [Migration("20210829102117_initial-create")]
     partial class initialcreate
     {

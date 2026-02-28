@@ -2,9 +2,9 @@
 
 namespace GroceryStoreAPI.Models
 {
-    public class CustomerContext : DbContext
+    public class GroceryContext : DbContext
     {
-        public CustomerContext(DbContextOptions<CustomerContext> options) : base(options)
+        public GroceryContext(DbContextOptions<GroceryContext> options) : base(options)
         { }
 
         public DbSet<Customer> Customer { get; set; }

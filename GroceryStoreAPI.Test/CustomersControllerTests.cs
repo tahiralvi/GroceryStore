@@ -7,12 +7,12 @@ namespace GroceryStoreAPI.Test
 {
     public class CustomersControllerTests
     {
-        private CustomerContext CreateInMemoryContext(string dbName)
+        private GroceryContext CreateInMemoryContext(string dbName)
         {
-            var options = new DbContextOptionsBuilder<CustomerContext>()
+            var options = new DbContextOptionsBuilder<GroceryContext>()
                 .UseInMemoryDatabase(dbName)
                 .Options;
-            return new CustomerContext(options);
+            return new GroceryContext(options);
         }
 
         [Fact]
