@@ -18,10 +18,6 @@ namespace GroceryStoreAPI.Controllers
             _context = context;
         }
 
-        public CustomersController()
-        {
-        }
-
         // GET: api/Customers
         [HttpGet(Name = nameof(GetAllCustomers))]
         public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
