@@ -1,4 +1,5 @@
 ﻿using GroceryStoreAPI.Models;
+using GroceryStoreAPI.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -6,22 +7,15 @@ using System.Threading.Tasks;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ItemsController : ControllerBase
+public class ItemsController : Controller // Changed from ControllerBase
 {
-    private readonly GroceryContext _context;
+    private readonly IItemService _itemService;
 
-    public ItemsController(GroceryContext context) => _context = context;
+    public ItemsController(IItemService itemService) => _itemService = itemService;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Item>>> GetItems() => await _context.Items.ToListAsync();
-
-    [HttpPost]
-    public async Task<ActionResult<Item>> PostItem(Item item)
+    public async Task<IActionResult> Index()
     {
-        _context.Items.Add(item);
-        await _context.SaveChangesAsync();
-        return CreatedAtAction(nameof(GetItems), new { id = item.ItemId }, item);
+        var items = await _itemService.GetAllItemsAsync();
+        return View(items);
     }
-
-    // Add Put and Delete following your Customer pattern
 }

@@ -1,0 +1,23 @@
+﻿@model GroceryStoreAPI.Models.Order
+
+<h2>Place New Order</h2>
+<form asp-action="Create">
+    <div class="form-group">
+        <label>Select Customer</label>
+        <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.Customers"></select>
+    </div>
+
+    <h4>Items in Cart</h4>
+    <div id="orderLines">
+        <div class="row">
+            <div class="col-md-6">
+                <select name="ItemId" class="form-control" asp-items="ViewBag.Items"></select>
+            </div>
+            <div class="col-md-3">
+                <input type="number" name="Quantity" class="form-control" placeholder="Qty" />
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Complete Purchase</button>
+</form>

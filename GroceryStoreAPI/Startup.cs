@@ -1,4 +1,6 @@
 ﻿using GroceryStoreAPI.Models;
+using GroceryStoreAPI.Services;
+using GroceryStoreAPI.Services.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +24,8 @@ namespace GroceryStoreAPI
             services.AddDbContext<GroceryContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
+            services.AddScoped<IItemService, ItemService>();
+            services.AddMvc();
             services.AddControllers();
         }
 
