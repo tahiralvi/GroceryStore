@@ -1,4 +1,5 @@
 ﻿using GroceryStoreAPI.Models;
+using GroceryStoreAPI.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -7,97 +8,65 @@ using System.Threading.Tasks;
 
 namespace GroceryStoreAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CustomersController : ControllerBase
+    public class CustomersController : Controller
     {
-        private readonly GroceryContext _context;
+        private readonly ICustomerService _customerService;
 
-        public CustomersController(GroceryContext context)
+        public CustomersController(ICustomerService customerService)
         {
-            _context = context;
+            _customerService = customerService;
         }
 
-        // GET: api/Customers
-        [HttpGet(Name = nameof(GetAllCustomers))]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetAllCustomers()
+        // GET: Customers
+        public async Task<IActionResult> Index()
         {
-            return await _context.Customer.ToListAsync();
+            var customers = await _customerService.GetAllAsync();
+            return View(customers);
         }
 
-        // GET: api/Customers/5
-        [HttpGet("{id}", Name = nameof(GetSingleCustomer))]
-        public async Task<ActionResult<Customer>> GetSingleCustomer(int id)
+        // GET: Customers/Details/5
+        public async Task<IActionResult> Details(int id)
         {
-            var customer = await _context.Customer.FindAsync(id);
+            var customer = await _customerService.GetByIdAsync(id);
+            if (customer == null) return NotFound();
+            return View(customer);
+        }
 
-            if (customer == null)
+        // GET: Customers/Create
+        public IActionResult Create() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Customer customer)
+        {
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                await _customerService.CreateAsync(customer);
+                return RedirectToAction(nameof(Index));
             }
-
-            return customer;
+            return View(customer);
         }
 
-        // PUT: api/Customers/5
-        [HttpPut("{id}", Name = nameof(UpdateCustomer))]
-        public async Task<IActionResult> UpdateCustomer(int id, Customer customer)
+        // GET: Customers/Edit/5
+        public async Task<IActionResult> Edit(int id)
         {
-            if (id != customer.CustomerId)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(customer).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!CustomerExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
+            var customer = await _customerService.GetByIdAsync(id);
+            if (customer == null) return NotFound();
+            return View(customer);
         }
 
-        // POST: api/Customers
-        [HttpPost(Name = nameof(AddCustomer))]
-        public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Customer customer)
         {
-            _context.Customer.Add(customer);
-            await _context.SaveChangesAsync();
+            if (id != customer.CustomerId) return BadRequest();
 
-            return CreatedAtAction("GetCustomer", new { id = customer.CustomerId }, customer);
-        }
-
-        // DELETE: api/Customers/5
-        [HttpDelete("{id}", Name = nameof(DeleteCustomer))]
-        public async Task<ActionResult<Customer>> DeleteCustomer(int id)
-        {
-            var customer = await _context.Customer.FindAsync(id);
-            if (customer == null)
+            if (ModelState.IsValid)
             {
-                return NotFound();
+                await _customerService.UpdateAsync(customer);
+                return RedirectToAction(nameof(Index));
             }
-
-            _context.Customer.Remove(customer);
-            await _context.SaveChangesAsync();
-
-            return customer;
-        }
-
-        private bool CustomerExists(int id)
-        {
-            return _context.Customer.Any(e => e.CustomerId == id);
+            return View(customer);
         }
     }
 }
