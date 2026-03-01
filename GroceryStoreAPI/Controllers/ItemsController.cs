@@ -3,8 +3,6 @@ using GroceryStoreAPI.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-[Route("api/[controller]")]
-[ApiController]
 public class ItemsController : Controller // Changed from ControllerBase
 {
     private readonly IItemService _itemService;

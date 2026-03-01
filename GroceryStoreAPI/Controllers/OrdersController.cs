@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 
-[Route("api/[controller]")]
-[ApiController]
 public class OrdersController : ControllerBase
 {
     private readonly GroceryContext _context;
