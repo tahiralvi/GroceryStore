@@ -1,8 +1,6 @@
 ﻿using GroceryStoreAPI.Models;
 using GroceryStoreAPI.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 [Route("api/[controller]")]
@@ -17,5 +15,24 @@ public class ItemsController : Controller // Changed from ControllerBase
     {
         var items = await _itemService.GetAllItemsAsync();
         return View(items);
+    }
+    // GET: api/Items/Create
+    [HttpGet("Create")]
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    // POST: api/Items/Create
+    [HttpPost("Create")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([Bind("Name,Description,Price,StockQuantity")] Item item)
+    {
+        if (ModelState.IsValid)
+        {
+            await _itemService.AddItemAsync(item);
+            return RedirectToAction(nameof(Index));
+        }
+        return View(item);
     }
 }
