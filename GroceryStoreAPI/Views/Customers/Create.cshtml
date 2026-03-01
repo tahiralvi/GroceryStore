@@ -15,8 +15,16 @@
                 <input asp-for="LastName" class="form-control" />
             </div>
             <div class="mb-3">
+                <label asp-for="ContactNo" class="form-label"></label>
+                <input asp-for="ContactNo" class="form-control" />
+            </div>
+            <div class="mb-3">
                 <label asp-for="Email" class="form-label"></label>
                 <input asp-for="Email" type="email" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label"></label>
+                <input asp-for="Address" class="form-control" />
             </div>
             <button type="submit" class="btn btn-success">Save Customer</button>
             <a asp-action="Index" class="btn btn-link">Back to List</a>
