@@ -1,0 +1,52 @@
+﻿@model GroceryStoreAPI.Models.Item
+
+@{
+    ViewData["Title"] = "Item Details";
+}
+
+<div class="container mt-4">
+    <h1>@ViewData["Title"]</h1>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Product Information</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd class="col-sm-9 text-muted">
+                    @(string.IsNullOrEmpty(Model.Description) ? "No description provided." : Model.Description)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="col-sm-9 font-weight-bold">
+                    @Model.Price.ToString("C")
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.StockQuantity)
+                </dt>
+                <dd class="col-sm-9">
+                    <span class="badge @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
+                        @Html.DisplayFor(model => model.StockQuantity) in stock
+                    </span>
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Edit" asp-route-id="@Model.ItemId" class="btn btn-warning">Edit</a>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>

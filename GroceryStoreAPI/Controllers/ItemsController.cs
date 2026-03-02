@@ -33,4 +33,23 @@ public class ItemsController : Controller // Changed from ControllerBase
         }
         return View(item);
     }
+
+    // GET: Items/Details/5
+    [HttpGet("Details/{id}")]
+    public async Task<IActionResult> Details(int? id)
+    {
+        if (id == null)
+        {
+            return NotFound();
+        }
+
+        var item = await _itemService.GetItemByIdAsync(id.Value);
+
+        if (item == null)
+        {
+            return NotFound();
+        }
+
+        return View(item);
+    }
 }
