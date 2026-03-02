@@ -1,6 +1,7 @@
 ﻿using GroceryStoreAPI.Models;
 using GroceryStoreAPI.Services.Interface;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 public class ItemsController : Controller // Changed from ControllerBase
@@ -46,6 +47,40 @@ public class ItemsController : Controller // Changed from ControllerBase
 
         if (item == null) return NotFound();
 
+        return View(item);
+    }
+
+    // GET: Items/Edit/5
+    [HttpGet("Edit/{id}")]
+    public async Task<IActionResult> Edit(int? id)
+    {
+        if (id == null) return NotFound();
+
+        var item = await _itemService.GetItemByIdAsync(id.Value);
+        if (item == null) return NotFound();
+
+        return View(item);
+    }
+
+    // POST: Items/Edit/5
+    [HttpPost("Edit/{id}")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, [Bind("ItemId,Name,Description,Price,StockQuantity")] Item item)
+    {
+        if (id != item.ItemId) return NotFound();
+
+        if (ModelState.IsValid)
+        {
+            try
+            {
+                await _itemService.UpdateItemAsync(item);
+            }
+            catch (Exception) // Logic for DbUpdateConcurrencyException usually goes here
+            {
+                return NotFound();
+            }
+            return RedirectToAction(nameof(Index));
+        }
         return View(item);
     }
 }
