@@ -9,6 +9,8 @@ public class ItemsController : Controller // Changed from ControllerBase
 
     public ItemsController(IItemService itemService) => _itemService = itemService;
 
+    [HttpGet("")]
+    [HttpGet("Index")]
     public async Task<IActionResult> Index()
     {
         var items = await _itemService.GetAllItemsAsync();
@@ -34,21 +36,15 @@ public class ItemsController : Controller // Changed from ControllerBase
         return View(item);
     }
 
-    // GET: Items/Details/5
     [HttpGet("Details/{id}")]
     public async Task<IActionResult> Details(int? id)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
+        if (id == null) return NotFound();
 
+        // Note: Using ItemId to match your Model
         var item = await _itemService.GetItemByIdAsync(id.Value);
 
-        if (item == null)
-        {
-            return NotFound();
-        }
+        if (item == null) return NotFound();
 
         return View(item);
     }
