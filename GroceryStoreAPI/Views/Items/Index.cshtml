@@ -22,9 +22,9 @@
                 <td>@item.Price.ToString("C")</td>
                 <td>@item.StockQuantity</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.ItemId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.ItemId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.ItemId">Remove</a>
+                    <a asp-action="Edit" asp-route-id="@item.ItemId" class="btn btn-sm btn-outline-secondary">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ItemId" class="btn btn-sm btn-outline-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ItemId" class="btn btn-sm btn-outline-danger">Remove</a>
                 </td>
             </tr>
         }
