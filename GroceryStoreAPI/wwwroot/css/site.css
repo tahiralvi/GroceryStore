@@ -1,0 +1,65 @@
+﻿/* Custom spacing for the main container */
+body {
+    margin-bottom: 60px; /* Space for a footer if added later */
+    background-color: #f8f9fa;
+}
+
+/* Enhancing the Grocery Inventory Table */
+.table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+    .table thead {
+        background-color: #343a40;
+        color: white;
+    }
+
+    /* Styling the Actions column links to look more distinct */
+    .table td a {
+        text-decoration: none;
+        font-weight: 500;
+        margin: 0 5px;
+    }
+
+/* Custom styles for the Item Details card */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.card-header {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Form validation styling */
+.field-validation-error {
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+.input-validation-error {
+    border: 1px solid #dc3545 !important;
+}
+
+/* Utility classes for currency and stock status */
+.text-price {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.badge-stock {
+    padding: 0.5em 0.8em;
+    border-radius: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .row dt {
+        margin-top: 10px;
+    }
+}
