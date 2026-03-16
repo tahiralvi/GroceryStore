@@ -17,6 +17,7 @@ public class ItemsController : Controller // Changed from ControllerBase
         var items = await _itemService.GetAllItemsAsync();
         return View(items);
     }
+
     // GET: api/Items/Create
     [HttpGet("Create")]
     public IActionResult Create()

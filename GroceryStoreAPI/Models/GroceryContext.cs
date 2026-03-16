@@ -11,6 +11,5 @@ namespace GroceryStoreAPI.Models
         public DbSet<Item> Items { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-
     }
 }
